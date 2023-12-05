@@ -46,10 +46,16 @@ prompt_M:
     # Check if M is legal
 check_M:
     bgt $s1, 20, prompt_N
-    # If M is not legal, display error message and prompt again
+    # If M is not legal, display an error message and prompt again
     li $v0, 4
     la $a0, error_msg
     syscall
     # Prompt the user for input again
     li $v0, 4
     la $a0, prompt_msg2
+    syscall
+    # Read integer input for M
+    li $v0, 5
+    syscall
+    move $s1, $v0
+    j check_M
