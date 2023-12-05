@@ -116,3 +116,6 @@ find_GCD:
     move $t0, $t2
     j find_GCD
 
+end_find_GCD:
+    move $v0, $t0
+    jr $ra
