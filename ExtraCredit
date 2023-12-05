@@ -106,3 +106,13 @@ calculate_GCD:
     li $v0, 10
     syscall
 
+find_GCD:
+    # Euclidean algorithm to find GCD
+    beqz $t1, end_find_GCD
+    div $t0, $t1
+    mfhi $t0
+    move $t2, $t1
+    move $t1, $t0
+    move $t0, $t2
+    j find_GCD
+
