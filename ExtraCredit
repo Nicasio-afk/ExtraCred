@@ -25,12 +25,17 @@ check_L:
     li $v0, 4
     la $a0, error_msg
     syscall
-# Prompt the user for input again
+    # Prompt the user for input again
     li $v0, 4
     la $a0, prompt_msg1
     syscall
     # Read integer input for L
     li $v0, 5
     syscall
-    move $s0, $v0
-    j check_L
+
+prompt_M:
+    # Prompt the user for input
+    li $v0, 4
+    la $a0, prompt_msg2
+    syscall
+ 
