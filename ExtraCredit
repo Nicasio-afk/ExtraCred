@@ -17,3 +17,11 @@ main:
     li $v0, 5
     syscall
     move $s0, $v0
+
+# Check if L is legal
+check_L:
+    bgt $s0, 20, prompt_M
+    # If L is not legal, display error message and prompt again
+    li $v0, 4
+    la $a0, error_msg
+    syscall
