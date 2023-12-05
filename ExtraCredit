@@ -70,3 +70,11 @@ prompt_N:
     li $v0, 5
     syscall
     move $s2, $v0
+
+# Check if N is legal
+check_N:
+    bgt $s2, 20, calculate_GCD
+    # If N is not legal, display an error message and prompt again
+    li $v0, 4
+    la $a0, error_msg
+    syscall
