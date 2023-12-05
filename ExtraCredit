@@ -87,3 +87,14 @@ check_N:
     syscall
     move $s2, $v0
     j check_N
+
+calculate_GCD:
+    # Calculate the Greatest Common Divisor (GCD)
+    move $t0, $s0   # Copy L to $t0
+    move $t1, $s1   # Copy M to $t1
+    jal find_GCD    # Jump to the find_GCD function
+
+    # Display the result
+    li $v0, 4
+    la $a0, result_msg
+    syscall
