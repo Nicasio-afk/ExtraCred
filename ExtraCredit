@@ -1,0 +1,9 @@
+    .data
+prompt_msg1:    .asciiz "Please enter a number L (> 20): "
+prompt_msg2:    .asciiz "Please enter a number M (> 20): "
+prompt_msg3:    .asciiz "Please enter a number N (> 20): "
+error_msg:      .asciiz "Illegal Number!\n"
+result_msg:     .asciiz "The Greatest Common Divisor (GCD) is: "
+
+    .text
+    .globl main
