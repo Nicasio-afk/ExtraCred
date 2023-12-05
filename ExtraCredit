@@ -38,4 +38,11 @@ prompt_M:
     li $v0, 4
     la $a0, prompt_msg2
     syscall
- 
+    # Read integer input for M
+    li $v0, 5
+    syscall
+    move $s1, $v0
+
+    # Check if M is legal
+check_M:
+    bgt $s1, 20, prompt_N
