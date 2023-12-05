@@ -78,3 +78,12 @@ check_N:
     li $v0, 4
     la $a0, error_msg
     syscall
+    # Prompt the user for input again
+    li $v0, 4
+    la $a0, prompt_msg3
+    syscall
+    # Read integer input for N
+    li $v0, 5
+    syscall
+    move $s2, $v0
+    j check_N
