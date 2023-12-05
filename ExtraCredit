@@ -7,3 +7,13 @@ result_msg:     .asciiz "The Greatest Common Divisor (GCD) is: "
 
     .text
     .globl main
+main:
+    # Prompt the user for input
+    li $v0, 4
+    la $a0, prompt_msg1
+    syscall
+
+    # Read integer input for L
+    li $v0, 5
+    syscall
+    move $s0, $v0
